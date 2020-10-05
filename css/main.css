@@ -2,11 +2,13 @@
 
 :root {
   --mainBlue: #40acf1;
-  --transparentBlue: rgba(64, 172, 241, 0.7);
+  --transparentOrange: rgba(221, 97, 14, 0.7);
   --mainWhite: #ffffff;
   --mainBlack: #292f36;
-  --mainGrey: rgb(216, 214, 214);
-  --mainYellow: #e3b505;
+  --mainGrey: rgba(0, 0, 0, 0.301);
+  --mainRed: #f04747;
+  --mainYellow: #ffb52b;
+  --mainOrange: rgb(207, 128, 38);
 }
 
 body {
@@ -14,32 +16,121 @@ body {
   color: var(--mainBlack);
   background: var(--mainWhite);
 }
+/* section title */
+.section-title--special {
+  background: var(--transparentOrange);
+  color: var(--mainWhite);
+  padding: 0.5rem 2rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+/* preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--mainWhite);
+  z-index: 999;
+}
+.hidePreloader {
+  display: none !important;
+}
+
 /* REM values to target root element 1REM = 16px */
+/* navbar */
 .navbar {
   background: var(--mainWhite);
 }
 .navbar-icon {
   font-size: 2rem;
-  color: var(--mainBlue);
+  color: var(--mainOrange);
 }
 .navbar-toggler {
-  outline-color: var(--mainBlue) !important;
+  outline-color: var(--mainOrange) !important;
 }
 .nav-link {
   color: var(--mainBlack);
   text-transform: capitalize;
 }
 .nav-link:hover {
-  color: var(--mainBlue);
+  color: var(--mainOrange);
 }
-.nav-icon{
-  font-size:1.5rem;
-  color: var(--mainBlue);
-  text-decoration: none!important;
+.nav-icon {
+  font-size: 1.5rem;
+  color: var(--mainOrange);
+  text-decoration: none !important;
   transition-property: color;
   transition-duration: 2s;
   transition-timing-function: linear;
 }
-.nav-icon:hover{
+.nav-icon:hover {
   color: var(--mainBlack);
+}
+
+/* header */
+.header {
+  clip-path: polygon(49% 0, 100% 3%, 100% 98%, 48% 100%, 0 95%, 0 55%, 0 5%);
+  color: var(--mainWhite);
+  overflow: hidden;
+}
+.height-max {
+  min-height: calc(100vh - 76px);
+  background: url('../img/headerBcg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation-name: zoom;
+  animation-duration: 15s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translateX(-6%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.title-heading {
+  background: rgba(2, 3, 0.9, 0.4);
+  border-left: 0.3rem solid var(--mainOrange);
+}
+.title {
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+@media screen and (min-width: 768) {
+  .title {
+    font-size: 3rem;
+  }
+}
+.title-icon {
+  color: var(--mainOrange);
+  text-decoration: none !important;
+}
+.title-icon:hover {
+  color: var(--mainOrange);
+  opacity: 0.7;
+}
+/* skills */
+.skills-icon {
+  font-size: 3rem;
+  color: var(--mainRed);
+  background: var(--mainGrey);
+}
+.skills-icon:hover {
+  color: var(--mainYellow);
+}
+.skills-underline {
+  width: 4rem;
+  height: 0.3rem;
+  background: var(--mainYellow);
+  margin: 1rem auto;
 }
