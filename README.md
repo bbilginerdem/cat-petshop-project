@@ -1,3 +1,3 @@
 # Cat Pet Shop Project
 
-Responsive website to market &amp; sell cars!
+Responsive website to market &amp; sell cats!
