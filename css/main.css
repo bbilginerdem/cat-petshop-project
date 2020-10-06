@@ -5,7 +5,7 @@
   --transparentOrange: rgba(221, 97, 14, 0.7);
   --mainWhite: #ffffff;
   --mainBlack: #292f36;
-  --mainGrey: rgba(0, 0, 0, 0.301);
+  --mainGrey: rgba(24, 53, 179, 0.383);
   --mainRed: #f04747;
   --mainYellow: #ffb52b;
   --mainOrange: rgb(207, 128, 38);
@@ -133,4 +133,25 @@ body {
   height: 0.3rem;
   background: var(--mainYellow);
   margin: 1rem auto;
+}
+
+/* inventory */
+.inventory {
+  background: var(--mainGrey);
+}
+.cat-card {
+  border-radius: 0 !important;
+}
+.cat-img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.cat-value{
+  background: var(--mainOrange);
+  color: var(--mainWhite);
+  clip-path: polygon(0 25%, 100% 0, 100% 75%, 0% 100%);
+  transition: all 1s linear;
+}
+.cat-value:hover{
+  clip-path: polygon(0 0%, 100% 25%, 100% 100%, 0% 75%);
 }
