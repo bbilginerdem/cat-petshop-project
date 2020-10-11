@@ -8,47 +8,43 @@ const CreateCats = (() => {
   // cat class
   class Cat {
     constructor(
-      make,
+      type,
+      breed,
       country,
       img,
       special,
-      breed,
       price,
-      type,
       personality,
       age
     ) {
-      this.make = make
+      this.type = type
+      this.breed = breed
       this.country = country
       this.img = img
       this.special = special
-      this.breed = breed
       this.price = price
-      this.type = type
       this.personality = personality
       this.age = age
     }
   }
   //cat creation function
   function makeCat(
-    make,
+    type = 'wild',
+    breed = 'Tabby Cat',
     country,
     img = 'img/cat-default.jpg',
     special = true,
-    breed = 'new breed',
     price = 99,
-    type = 'Tabby Cat',
     personality = 'Neuroticism',
     age = '2'
   ) {
     const cat = new Cat(
-      make,
+      type,
+      breed,
       country,
       img,
       special,
-      breed,
       price,
-      type,
       personality,
       age
     )
@@ -56,16 +52,16 @@ const CreateCats = (() => {
   }
   // produce cats
   function produceCats() {
-    makeCat('persian', 'iran', 'img/cat-wild-1.jpg', true)
-    makeCat('Bobcat', 'America', 'img/cat-wild-2.jpg')
-    makeCat('Black Tiger', 'Asia', 'img/cat-wild-3.jpg')
-    makeCat('lion', 'Africa', 'img/cat-wild-4.jpg', false)
-    makeCat('Wildy', 'World Wide', 'img/cat-wild-5.jpg', false)
-    makeCat('Bombay', 'World Wide', 'img/cat-cute-1.jpg')
-    makeCat('Bombay', 'World Wide', 'img/cat-cute-2.jpg', false)
-    makeCat('Bombay', 'World Wide', 'img/cat-cute-3.jpg', false)
-    makeCat('Bombay', 'World Wide', 'img/cat-cute-4.jpg', false)
-    makeCat('Bombay', 'World Wide', 'img/cat-cute-5.jpg', false)
+    makeCat('wild', 'persian', 'iran', 'img/cat-wild-1.jpg', true)
+    makeCat('wild', 'Bobcat', 'America', 'img/cat-wild-2.jpg')
+    makeCat('wild', 'Black Tiger', 'Asia', 'img/cat-wild-3.jpg')
+    makeCat('wild', 'lion', 'Africa', 'img/cat-wild-4.jpg', false)
+    makeCat('wild', 'Wildy', 'World Wide', 'img/cat-wild-5.jpg', false)
+    makeCat('cute','Bombay', 'World Wide', 'img/cat-cute-1.jpg', true)
+    makeCat('cute','Bombay', 'World Wide', 'img/cat-cute-2.jpg', false)
+    makeCat('cute','Bombay', 'World Wide', 'img/cat-cute-3.jpg', false)
+    makeCat('cute','Bombay', 'World Wide', 'img/cat-cute-4.jpg', false)
+    makeCat('cute','Bombay', 'World Wide', 'img/cat-cute-5.jpg', false)
   }
   produceCats()
 
@@ -121,7 +117,7 @@ const DisplayCats = ((CreateCats) => {
     let output = ''
     cats.forEach((cat) => {
       output += `        <!-- single cat -->
-        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4 single-cat ${cat.country}">
+        <div class="col-10 mx-auto my-3 col-md-6 col-lg-4 single-cat ${cat.type}">
           <div class="card cat-card">
             <img src="${cat.img}" class="card-img-top cat-img" alt="">
             <!-- card body -->
